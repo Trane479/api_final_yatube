@@ -1,13 +1,11 @@
-# TODO:  Напишите свой вариант
 from rest_framework import viewsets, permissions, filters
 from rest_framework.generics import get_object_or_404
-from django.core.exceptions import PermissionDenied
 from rest_framework.pagination import LimitOffsetPagination
 
-from .serializers import GroupSerializer, PostSerializer, CommentSerializer, FollowSerializer
+from .serializers import GroupSerializer, PostSerializer
+from .serializers import CommentSerializer, FollowSerializer
 from posts.models import Group, Post
 from .permissions import IsAuthorOrReadOnlyPermission
-
 
 
 class PostViewSet(viewsets.ModelViewSet):

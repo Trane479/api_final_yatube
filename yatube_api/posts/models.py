@@ -12,6 +12,7 @@ class Group(models.Model):
     def __str__(self):
         return self.title
 
+
 class Post(models.Model):
     text = models.TextField()
     pub_date = models.DateTimeField('Дата публикации', auto_now_add=True)
@@ -23,7 +24,7 @@ class Post(models.Model):
     )
     image = models.ImageField(
         upload_to='posts/', null=True, blank=True)
-    
+
     def __str__(self):
         return self.text
 
@@ -43,4 +44,3 @@ class Follow(models.Model):
         User, on_delete=models.CASCADE, related_name='follower')
     following = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='following')
-    

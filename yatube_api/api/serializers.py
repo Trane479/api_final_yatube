@@ -52,7 +52,6 @@ class FollowSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError()
         return data
 
-
     class Meta:
         model = Follow
         fields = ('user', 'following')
@@ -62,4 +61,3 @@ class FollowSerializer(serializers.ModelSerializer):
                 fields=('user', 'following')
             )
         ]
-
