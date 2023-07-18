@@ -49,4 +49,4 @@ class FollowViewSet(viewsets.ModelViewSet):
         serializer.save(user=self.request.user)
 
     def get_queryset(self):
-        return self.request.user.follower.all().select_related('user')
+        return self.request.user.follower.all()
